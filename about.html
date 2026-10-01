@@ -1,42 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QuickNotes</title>
+<head>
+  <meta charset="UTF-8">
+  <title>About QuickNotes</title>
+</head>
+<body>
+
+  <header>
+      <h1>QuickNotes</h1>
+      <p>Capture ideas before they disappear.</p>
+    </header>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
     </nav>
-  </head>
-  <body>
-    <header>
-      <h1>QuickNotes</h1>
-      <p>Capture ideas before they disappear.</p>
-    </header>
+  </header>
 
-    <main>
-      <section>
-        <h2>Add a note</h2>
-        <form id="note-form">
-          <label for="note-input">New note</label>
-          <input type="text" id="note-input" placeholder="Type a note..." />
-          <button type="submit">Add Note</button>
-        </form>
-      </section>
+  <main>
+    <h2>About QuickNotes</h2>
+    <p>QuickNotes is a simple app for saving short notes. It helps you remember ideas and to-dos.</p>
 
-      <section>
-        <h2>Your notes</h2>
-        <p id="note-count">You have 2 notes.</p>
-        <ul id="notes-list">
-          <li>Revise HTML forms</li>
-          <li>Push my code to GitHub</li>
-        </ul>
-      </section>
-    </main>
+    <section>
+      <h3>How to use QuickNotes</h3>
+      <ol>
+        <li>Type a note.</li>
+        <li>Click Add.</li>
+        <li>Read your notes in the list.</li>
+      </ol>
+    </section>
 
-    <footer>
-      <p>&copy; 2026 QuickNotes. Built during Web Foundations.</p>
-    </footer>
-  </body>
+    <section>
+      <h3>Features</h3>
+      <ul>
+        <li>Quick notes</li>
+        <li>Simple design</li>
+        <li>Keyboard shortcuts</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Keyboard shortcuts</h3>
+      <table>
+        <tr>
+          <th>Shortcut</th>
+          <th>Action</th>
+        </tr>
+        <tr>
+          <td>Ctrl + N</td>
+          <td>New note</td>
+        </tr>
+        <tr>
+          <td>Ctrl + S</td>
+          <td>Save note</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h3>Send feedback</h3>
+      <form>
+        <label for="name">Name</label><br>
+        <input type="text" id="name" required><br>
+
+        <label for="email">Email</label><br>
+        <input type="email" id="email" required><br>
+
+        <label for="message">Message</label><br>
+        <textarea id="message" required></textarea><br>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 QuickNotes. Built during Web Foundations.</p>
+  </footer>
+
+</body>
 </html>
