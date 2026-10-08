@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live Character Counter</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="card">
+    <header class="top">
+      <h1>Quick note</h1>
+      <button id="theme-toggle" type="button">Dark mode</button>
+    </header>
+
+    <label for="note-text">Write your note</label>
+    <textarea id="note-text" rows="8" placeholder="Start typing..."></textarea>
+
+    <div class="stats">
+      <p id="char-count">0 / 200 characters</p>
+      <p id="word-count">0 words</p>
+    </div>
+
+    <button id="clear-btn" type="button">Clear</button>
+    <p class="hint">Press Esc to clear.</p>
+  </main>
+</body>
+</html>
