@@ -1,12 +1,18 @@
- School database: students, courses and enrolments
+-- ============================================================
+-- School database: students, courses and enrolments
+-- Works in SQLite (for example sqliteonline.com)
+-- ============================================================
 
 PRAGMA foreign_keys = ON;
 
+-- Start fresh so the script can be run again without errors
 DROP TABLE IF EXISTS enrolments;
 DROP TABLE IF EXISTS courses;
 DROP TABLE IF EXISTS students;
 
- 1. CREATE TABLE statements
+-- ------------------------------------------------------------
+-- 1. CREATE TABLE statements
+-- ------------------------------------------------------------
 
 CREATE TABLE students (
   student_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -20,7 +26,7 @@ CREATE TABLE courses (
   credits    INTEGER NOT NULL
 );
 
---Join table: one row = one student enrolled on one course
+-- Join table: one row = one student enrolled on one course
 CREATE TABLE enrolments (
   enrolment_id INTEGER PRIMARY KEY AUTOINCREMENT,
   student_id   INTEGER NOT NULL,
@@ -32,13 +38,15 @@ CREATE TABLE enrolments (
   UNIQUE (student_id, course_id)
 );
 
+-- ------------------------------------------------------------
 -- 2. INSERT statements (sample data)
+-- ------------------------------------------------------------
 
 INSERT INTO students (name, email) VALUES
-  ('Jackline Odhiambo', 'jackline@example.com'),
-  ('Brian Kathure',    'brian@example.com'),
-  ('Cynthia Wambui','cynthia@example.com'),
-  ('David Ocholla',   'david@example.com');
+  ('Amina Odhiambo', 'amina@example.com'),
+  ('Brian Kamau',    'brian@example.com'),
+  ('Cynthia Wanjiru','cynthia@example.com'),
+  ('David Mwangi',   'david@example.com');
 
 INSERT INTO courses (title, credits) VALUES
   ('Web Development', 4),
@@ -62,7 +70,7 @@ SELECT courses.title, courses.credits, enrolments.grade
 FROM students
 JOIN enrolments ON enrolments.student_id = students.student_id
 JOIN courses    ON courses.course_id     = enrolments.course_id
-WHERE students.name = 'Jackline Odhiambo';
+WHERE students.name = 'Amina Odhiambo';
 
 -- Query 2: all students on one course
 SELECT students.name, students.email, enrolments.grade
@@ -88,7 +96,7 @@ WHERE enrolments.enrolment_id IS NULL;
 -- (Cynthia's grade for Web Development was empty, now she gets a 'B')
 UPDATE enrolments
 SET grade = 'B'
-WHERE student_id = (SELECT student_id FROM students WHERE name = 'Cynthia Wambui')
+WHERE student_id = (SELECT student_id FROM students WHERE name = 'Cynthia Wanjiru')
   AND course_id  = (SELECT course_id  FROM courses  WHERE title = 'Web Development');
 
 -- Check that the update worked
@@ -96,4 +104,4 @@ SELECT students.name, courses.title, enrolments.grade
 FROM enrolments
 JOIN students ON students.student_id = enrolments.student_id
 JOIN courses  ON courses.course_id   = enrolments.course_id
-WHERE students.name = 'Cynthia Wambui';
+WHERE students.name = 'Cynthia Wanjiru';
