@@ -1,0 +1,7 @@
+# Reflection
+
+The most difficult concept for me was how Git, my local folders and GitHub fit together. Early on I ran `git init` inside a folder that was already part of a project, which created a second repository, and my push was rejected. I overcame it by slowing down. I learned to check where I was with `pwd` and `git status`, to clone the real repository instead of starting a new one, and to commit in small steps with clear messages. After a few attempts it became routine, and I could push my later assignments and our hackathon project without panic.One of my friends helped me with these and through practice i learnt it.
+
+For my capstone, I would improve on the architecture diagram, the estimates or how I explained the trade-offs. The feedback showed me that i understood the concept well. Next time I would learn markdown very well and explain my architecture correctly, and I would test my design against a real example, such as the ticket sale in this assignment, to check that every component solves a real problem.
+
+Next I want to learn how to build a real backend: a Node.js server connected to a SQL database, so that the API and data model I designed run as working code instead of only documents. I also want to practise deploying an app properly and learn the basics of security, such as passwords and login.
